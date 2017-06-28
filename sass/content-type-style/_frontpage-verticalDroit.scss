@@ -1,0 +1,157 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL |   
+|               STYLE                               |
+|     FRONTPAGE  VERTICAL DROIT   |
+|--------------------------------------*/
+
+  //@include breakpoint ($mobile){}
+  //@include breakpoint ($desktop){}
+  //@include breakpoint ($tablet){}
+
+//Code imbriqué à 100%
+body .conteneur {
+    
+           
+    .HPGauche{
+              iframe{
+            border: 0.2em solid $rose-fushia;
+            padding: em(1px);
+            @include img-centered;
+            max-width: 95%;
+            @include breakpoint ($desktop){
+                
+       
+            }
+    }
+    img{
+        @include img-centered;
+    }
+        .HPGauche1{}
+        .HPGauche2{}
+        .HPGauche3{}
+    }
+    .HPDiapoVerticalDroite{
+        aside.DiapoDroiteHP {
+            img{
+                @include adaptable-img;
+              @include img-centered;
+            }
+
+        }
+    }
+    
+}
+@include breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    //Taille du conteneur du groupe    
+
+    .HPGauche{
+  
+        .HPGauche1{}
+        .HPGauche2{}
+        .HPGauche3{}
+    }
+    .HPDiapoVerticalDroite{
+        
+    }
+}
+
+    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+        //Taille du conteneur du groupe
+    .HPGauche{
+        @include span(first $tabletcol/2 of $tabletcol);
+        .HPGauche1{}
+        .HPGauche2{}
+        .HPGauche3{}
+    }
+    .HPDiapoVerticalDroite{@include span(last $tabletcol/2 of $tabletcol);} 
+        
+}
+
+/********** STYLE DES ELEMENTS ******/
+.HPGauche1,.HPGauche2,.HPGauche3 {
+    background: none;
+    color: black;
+    ul li {
+        list-style: square;
+        
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/*------------------------------
+Liste Actus pour homepage
+-------------------------------*/
+
+
+.HPGauche1,.HPGauche2{
+    aside.PartieGauche1, aside.PartieGauche2   {
+        h3.title{
+            text-align: center;
+            font-family: $AristaFont;
+            display: block;
+            font-size: x-large;
+            color: $rose-fushia;
+        }
+        .view-empty{text-align: center;}
+        .table-actus-hp, .table-actus-hp2{
+            width: auto;
+            margin: 0 auto;
+            border: 0;
+            @include breakpoint ($desktop){
+                width: em(400px);
+            }
+            thead th{
+                border-bottom: em(3px) solid $rose-fushia;
+            }
+            tbody{
+                border: 0;
+            }
+            tr{
+                
+                display: block;
+                background: 0;
+                border: 0;
+            }
+            td{
+                background: white;
+                border: 0;
+              margin: em(2px) 0;
+                padding: em(5px);
+                display: block;
+                border-bottom: em(1px) solid $rose-fushia;
+                &:hover{
+                    background: $rose-fushia;
+                }
+            }
+
+            p{}
+            a{
+                color: $gris-anthracite;
+                text-decoration: none;
+                font-weight: bold;
+                text-align: center;
+                display: block;
+                font-size: small;
+                &:hover{
+                    text-decoration: underline;
+                    color: white;
+                }
+            }
+
+            span.date-display-single{
+                text-align: right;
+                float: right;
+                font-style: italic;
+            }
+        }
+
+    }
+}

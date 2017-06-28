@@ -1,0 +1,112 @@
+/*
+2015/03 - Layout DESKTOP
+Layout pour les desktop.Breakpoint définit par variable dans _variables.scss
+*/
+body .conteneur{
+    @include breakpoint($desktop)
+    {
+        padding-top: 2em;  
+        @include container($desktopcol);
+        //@debug susy-get(columns);
+        #header{
+            //voir _layout-header.scss
+
+
+        }
+        .content-global{
+
+                     
+        }
+        .content-inner{
+
+            .content-header{}
+        }
+        .content-top{
+            min-height: 5em;//permet d'éviter que defilant se superpose
+            
+               @include break;
+                &:before{
+                content: " ";
+                display: block;
+                clear: both;
+            }
+        }
+        .middle-content{
+            @include span( 12 of $desktopcol);         
+
+        }
+        .node-inner{  
+            @include span( 12 of $desktopcol);
+            /*@include clearfix;*/
+        }                       
+        .content-bottom{}
+        .content-bottom-home{
+            @include break;
+                &:before{
+                content: " ";
+                display: block;
+                clear: both;
+            }
+        }
+
+
+        #left-content{}
+        #right-content{}
+        #footer{
+            @include break;
+            @include background-size();;
+            &:before{
+                content: " ";
+                display: block;
+                clear: both;
+            }
+            p{
+               //Voir fichier typos.scss pour taille
+            }
+        }
+
+    }
+
+}
+/*********************************
+----------------------------------
+---- RESEAUX SOCIAUX Service links
+---------------------------------*/
+.service-links{
+    background: none repeat scroll 0 0 $gris-clair;
+    display: block;
+    margin: 0 auto;
+    padding: em(2px);
+    text-align: center;
+    @include squish(0.5,0.5); //Ajoute un margin avant et aprés l'element pour le centrer
+    
+    @include arrondis (em(5px));
+    @include PIE;
+
+    a{
+        margin: 0 em(5px);
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: none;
+        }
+
+    }
+    iframe{
+        height: em(20px);
+        @include clearfix;
+        width: auto;
+    }
+    
+    ul{
+        @include push(0.5); //Ajoute un margin avant l'element
+        li{
+            
+        }
+    }
+    .fb_iframe_widget{
+       
+    }
+    .twitter-share-button,.fb_iframe_widget,#___plusone_0,.IN-widget{
+        padding: 0 0.3em;
+    }
+}
