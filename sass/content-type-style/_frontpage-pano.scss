@@ -10,39 +10,6 @@
   //@include susy-breakpoint ($desktop){}
   //@include susy-breakpoint ($tablet){}
 
-//Code imbriqué à 100%
-body .conteneur {
-    
-
-    .HPDiapo{}
-    .HPBasGauche{}
-    .HPBasDroit{}
-}
-@include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-
-    .HPDiapo{
-        &:after{
-                content: " ";
-                display: block;
-                clear: both;}
-    }
-    .HPBasGauche{
-        //@include clearfix; 
-        @include span(first 6 of $desktopcol);}
-    .HPBasDroit{
-        //@include clearfix; 
-        @include span(last $desktopcol/2 of $desktopcol);
-        
-    }
-}
-
-@include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-
-    .HPDiapo{}
-    .HPBasGauche{@include span(first $tabletcol/2 of $tabletcol);}
-    .HPBasDroit{@include span(last $tabletcol/2 of $tabletcol);}
-
-}
 
 /********************/
 /*ZONES PAGE ACCUEIL*/
@@ -60,33 +27,9 @@ body .conteneur {
 
 /*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE  PANORAMIQUE----*/
 
-//Layout du diaporama dynamique (Views slideshow)
-//Code imbriqué à 100%
-aside.DiapoPanoHP{
+//Voir fichier _layout-diapo-frontpage.scss pour le style et le layout du diapo
 
 
-    #transparency{
-        display: none;
-
-    }
-    #contenu-diapo{
-        display: none;
-    }
-    img{@include adaptable-img;}
-    @include susy-breakpoint($tablet) {
-        #transparency{display: block;}
-        #contenu-diapo{display: block;}
-
-    }
-    @include susy-breakpoint($desktop) { 
-        @include clearfix;
-        max-width: container($desktopcol);
-        #transparency{display: block;}
-        #contenu-diapo{display: block;}
-        img{}
-    }
-
-}
 
 /*********************************
 ---- STYLE HOMEPAGE ACTUS -----------
@@ -107,6 +50,7 @@ aside.DiapoPanoHP{
         color: $orange;
         margin: 1em 0 0 0;
     }
+     img{@include adaptable-img;}
     iframe{
         @include breakpoint ($desktop){
             margin: 1em 0 0 2em;
@@ -114,69 +58,17 @@ aside.DiapoPanoHP{
         
     }
 }
-
-
-#table-actus-hp,#table-actus-hp2{
-    width: 91%;
-    margin: 0 auto;
-    border: 0;
-    thead th{
-        border-bottom: em(3px) solid $orange;
+/*DEFILANT CONTENU PONCTUEL*/
+aside.DiapoPanoHP {
+    .defilant-ponctuel{
+        font-size: medium;color: $rose-fushia;display: block;text-align: center;font-weight: bold;margin: em(10px) 0;
+    background: $gris-clair-moyen;padding: em(5px);height: em(40px);
     }
-    tbody{}
-    tr{
-        margin: em(3px);
-    }
-    td{
-        background: white;
-        border: 0;
-        margin: em(2px) 0;
-        padding: em(5px);
-        display: block;
-        border-bottom: em(1px) solid $violet;
-        &:hover{
-            background: $orange;
-        }
-    }
-    p{}
-    a{
-        color: $violet;
-        text-decoration: none;
-        font-weight: bold;
-        font-size:small;
-        &:hover{
-            text-decoration: underline;
-            color: white;
-        }
-    }
-    span.date-display-single{
-        text-align: right;
-        float: right;
-        font-style: italic;
-    }
+    
+    .ponctuel{display: block;width: auto;}
 }
-/*
-HOMEPAGE SLIDESHOW DERNIERES VDL (Views3) =======================
-*/
-#block-views-HP_slideshow-block_1{
-    padding: 0 1.5em;
-    #views_slideshow_cycle_main_HP_slideshow-block_1 {
-        .views-field-title {
-            a{
-                color:$violet;font-size: em(14px);text-decoration: none;
-                &:hover{
-                    text-decoration: underline;
-                }
-            }
-        }
 
-        img{
-            padding: em(2px);
-            border: em(3px) solid $orange;
-            @include adaptable-img;
-        }
-    }
-}
+
 /*
 LIKEBOX FACEBOOK ====
 */

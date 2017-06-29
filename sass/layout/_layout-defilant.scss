@@ -61,6 +61,7 @@ aside .annonce-container .annonce
         text-decoration: none;
         font-weight: bold;
         text-transform:capitalize;
+        font-size:medium;
         &:hover {
             text-decoration: underline;
         }
@@ -70,7 +71,7 @@ aside .annonce-container .annonce
         padding: 0;
     }
     p{
-        font-size: large;
+        font-size: medium;
     }
     img{
         @include adaptable-img;

@@ -18,45 +18,49 @@
 //Code imbriqué à 100%
 body .conteneur .HPDiapo{
     aside.DiapoPanoHP{
-#transparency{
-background:none repeat scroll 0 0 $rouge;/*Couleur du fond*/
-height:em(65px);
-bottom:em(10px);
-left:em(12px);
-position:absolute;
-width:100%;
-z-index:15;
-@include opacity (0);//Pas de couleur de fond pour le texte en surimpression
-}
-#contenu-diapo{
-    position:relative;
-    bottom: 10%;
-    left: em(10px);
-    color: white;
-    z-index:20;
-    top: em(-85px);
-    h2,p{
-        color: white;
-        padding:em(5px);
-        font-family: $AristaFont;
-        font-size: larger;
-        a{
-            color: white;
-            text-decoration: none;
+        #transparency{
+            background:none repeat scroll 0 0 $rouge;/*Couleur du fond*/
+            height:em(65px);
+            bottom:em(10px);
+            left:em(12px);
+            position:absolute;
+            width:100%;
+            z-index:15;
+            @include opacity (0);//Pas de couleur de fond pour le texte en surimpression
         }
-    }
-}
-    img{@include adaptable-img;}
-       @include breakpoint($tablet) {
-        #transparency{display: block;}
-        #contenu-diapo{display: block;}
+        #contenu-diapo{
+            position:relative;
+            bottom: 10%;
+            left: em(10px);
+            color: white;
+            z-index:20;
+            top: em(-85px);
+            h2,p{
+                color: white;
+                padding:em(5px);
+                font-family: $AristaFont;
+                font-size: auto;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+        img{@include adaptable-img;}
+        @include breakpoint($tablet) {
+            #transparency{display: block;}
+            #contenu-diapo{display: block;}
 
-    }
-    @include breakpoint($desktop) { 
-      // @include span(12 of $desktopcol);
-
-      img{@include adaptable-img;}
-    }
+        }
+        @include breakpoint($desktop) { 
+            @include clearfix;
+            max-width: container($desktopcol);
+            #transparency{display: block;}
+            #contenu-diapo{display: block;}
+            h2,p{
+                font-size: larger;
+            }
+        }
     }
 }
 

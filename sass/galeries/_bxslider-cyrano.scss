@@ -24,8 +24,8 @@ Override du style de galerie Bxslider
     }
 }
 }
-
-.HPDiapoVerticalDroite{
+//Diaporama sur Page d'accueil du site
+.HPDiapo,.HPDiapoVerticalDroite{
     .bx-wrapper{
         .bx-viewport {
         box-shadow: none;
@@ -37,13 +37,17 @@ Override du style de galerie Bxslider
             left: em(11px);
             width: 96%;
             //couleur fond des captions
-            @include rgba-background($rose-fushia, 0.7);
+            @include rgba-background($rouge, 0.0);
+            
             span{
                  color: white;
                 padding: em(5px);
                 font-family: $AristaFont;
                 line-height: 1.3em;
-                font-size: x-large;
+                @include breakpoint(($desktop,$tablet)){
+                    font-size: x-large;
+                }
+                
             }
         }
     }
