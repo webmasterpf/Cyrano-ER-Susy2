@@ -2,8 +2,8 @@
 ;Ajouter les regions utiles dans la liste ci apres, idem pour les CSS.
 ;Changer le screenshot du site pour interface admin
 ;
-name = SUSY 2 Template for PF
-description = Gabarit SCSS /HTML5 pour Drupal 6. Thème RWD utilisant Susy 2, GULP, Sans Compass
+name = Site RWD pour E.Rostand 2017.
+description = Gabarit SCSS /HTML5 pour Drupal 6. Thème RWD utilisant Susy 2, GULP, Sans Compass.Design and Developpment by Webmaster PF.
 version = VERSION
 core = 6.x
 engine = phptemplate
@@ -30,10 +30,19 @@ stylesheets[all][] = css/vendor/buttons/buttons.css
 scripts[] = 3rdparty/buttons/js/buttons.js
 
 ;Style pour Flexslider
-stylesheets[all][] = 3rdparty/flexslider/flexslider.css
+;stylesheets[all][] = 3rdparty/flexslider/flexslider.css
 
 ;Style pour Bxslider
 stylesheets[all][] = 3rdparty/bxslider/jquery.bxslider.css
+
+;Style pour BaguetteBox
+stylesheets[all][] = 3rdparty/baguettebox/baguetteBox.min.css
+
+;Style pour Chocolat (vignettes zoomables RWD)
+;stylesheets[all][] = 3rdparty/chocolat/chocolat.css
+
+;Style pour Responsive Slides (diaporama RWD)
+stylesheets[all][] = js/jquery_plugin/responsiveslides/responsiveslides.css
 
 ; CSS pour utiliser NiceMenu
 ;stylesheets[all][] = css/navigation/nice_menus_custom.css
@@ -67,25 +76,25 @@ regions[search_box] = Zone recherche - Bloc
 regions[bandeau1] = Bandeau haut de page
 
 ;Homepage pour site Provence Formation
-regions[annonceImg] = Image pour annonce - Bloc
-regions[blocLycee] = Acces Lycees - Bloc
-regions[Anim] = Animation Flash - Bloc
-regions[DiapoHP] = Diaporama Homepage - Bloc
+;regions[annonceImg] = Image pour annonce - Bloc
+;regions[blocLycee] = Acces Lycees - Bloc
+;regions[Anim] = Animation Flash - Bloc
+;regions[DiapoHP] = Diaporama Homepage - Bloc
 
 ;Regions customs pour site Provence Formation
-regions[centralBloc] = Zone pour bloc central - View Bloc
-regions[centre_partenaire] = Zone centrale page partenaire
+;regions[centralBloc] = Zone pour bloc central - View Bloc
+;regions[centre_partenaire] = Zone centrale page partenaire
 
 
 
 ;Diaporama HP selon layout choisi (décommenter pour choisir)
-;regions[DiapoPanoHP] = Diaporama Panoramique Homepage - Bloc
+regions[DiapoPanoHP] = Diaporama Panoramique Homepage - Bloc
 ;regions[DiapoGaucheHP] = Diaporama Gauche Homepage - Bloc
 ;regions[DiapoDroiteHP] = Diaporama Droite Homepage - Bloc
 
 ;Diaporama panoramique
-;regions[HPBasG] = Zone Bas Gauche HP - Bloc
-;regions[HPBasD] = Zone Bas Droit HP - Bloc
+regions[HPBasG] = Zone Bas Gauche HP - Bloc
+regions[HPBasD] = Zone Bas Droit HP - Bloc
 
 ;Diaporama vertical Gauche
 ;regions[PartieDroite1] = Zone Droite 1 HP - Bloc
@@ -119,16 +128,19 @@ regions[right] = Colonne Droite
 regions[content_bottom] = Content bottom
 regions[content_bottom_home] = Content bottom homepage
 regions[footer_block] = Footer
+
 ;Regions pour la page actu
 regions[revue_presse] = Zone pour les revues de presse - Vue bloc
 regions[sortie_action] = Zone pour les sorties/actions - Vue bloc
 regions[actuAssociation] = Zone pour RSS issu du site PF - Vue Bloc RSS
 regions[projets] = Zone pour les projets - Vue Bloc
 regions[intervenants] = Zone pour les Intervenants - Vue Bloc
+
 ;Region pour formulaire
 regions[formulaire] = Formulaire (centre) - Webform Bloc
+
 ;Region pour slideshow
-regions[frontpageSlideshow] = Zone Frontpage Slideshow
+;regions[frontpageSlideshow] = Zone Frontpage Slideshow
 
 
 settings[basic_zen_tabs]             = 1

@@ -46,7 +46,7 @@ aside.navStatic{
                     /*font-size: x-large;//taille classique*/
                     font-weight: bold;//si typo trop fine
                     &:hover {
-                        color: $rose-fushia;//couleur du hover
+                        color: $rouge;//couleur du hover
                     }
                     img{
                         @include adaptable-img;

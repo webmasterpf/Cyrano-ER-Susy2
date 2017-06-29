@@ -1,37 +1,37 @@
-<!-- ______________________ LAYOUT HOMEPAGE PANORAMIQUE C.GRAWITZ_______________________ -->
+<!-- ______________________ LAYOUT HOMEPAGE PANORAMIQUE _______________________ -->
 <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_header.php');
-?>  
- <!-- ______________________ CONTENU _______________________ -->
+?>
+<!--  ______________________ CONTENU _______________________ -->
 
           <?php if ($content_top): ?>
-            <div id="content-top">
+            <div class="content-top">
               <?php print $content_top; ?>
-            </div> <!-- /#content-top -->
+            </div>   <!--  /content-top -->
           <?php endif; ?>
-       
 
-   <!-- ______________________ ZONE DIAPO PANORAMIQUE _______________________ -->
-
+<!--    ______________________ ZONE DIAPO _______________________ -->
+			
               <?php if ($DiapoPanoHP): ?>
                  <div class="HPDiapo"><?php print $DiapoPanoHP; ?></div>
               <?php endif; ?>
+        
 
-
-
-<!-- ______________________ PARTIE BAS GAUCHE _______________________ -->
+ <!--______________________ PARTIE BAS GAUCHE _______________________ -->
                  <?php if ($HPBasG): ?>
                  <div class="HPBasGauche"><?php print $HPBasG; ?></div>
-              <?php endif; ?>
-
-<!-- ______________________ PARTIE BAS DROITE _______________________ -->
-
+              <?php endif; ?>  
+		 
+ <!--______________________ PARTIE BAS DROITE _______________________ -->
+   
         <?php if ($HPBasD): ?>
      <div class="HPBasDroit"><?php print $HPBasD; ?></div>
         <?php endif; ?>
-  
-	<!-- ______________________ CONTENU BAS _______________________ -->
+
+ <!--______________________ FIN LAYOUT PAGE _______________________ -->
+	
+<!-- ______________________ CONTENU BAS _______________________ -->
     <?php if ($content_bottom_home): ?>
     <div class="content-bottom-home">
       <?php print $content_bottom_home; ?>
@@ -40,8 +40,7 @@ include ($theme_path.'/includes/inc_header.php');
 
 
     </div><!-- /#content-bottom -->
-
-<?php
+        <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_footer.php');
-?>      
+?>

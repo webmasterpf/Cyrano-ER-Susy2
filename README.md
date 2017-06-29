@@ -20,10 +20,13 @@ Plugin pour Sass:
 npm install --save-dev  event-stream gulp-util node-sass-import-once gulp-sass  gulp-autoprefixer gulp-size gulp-shell gulp-notify notify-send gulp-sourcemaps typey susy node-normalize-scss
 gulp-plumber
 
+Ajouter browserSync: npm install browser-sync --save-dev
+
 Vérifier versions des npm:
 npm-check
 
 https://github.com/at-import/breakpoint
+Toujours utilisé via Gem (Ruby).Vérifier sa présence: gem list (gem locales du projet)
 
 REGLAGES A FAIRE
 ----------------
