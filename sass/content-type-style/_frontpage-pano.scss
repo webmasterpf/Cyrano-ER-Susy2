@@ -44,8 +44,15 @@
     }
     h3,h3.block-title{
         text-align: center;
-        color: $orange;
+        color: $rouge;
         margin: 1em 0 0 0;
+        font-family: $AristaFont;
+    display: block;
+    font-size: large;
+    }
+    tr{
+        background: 0;
+        border: 0;
     }
      img{@include adaptable-img;}
     iframe{
@@ -63,6 +70,67 @@ aside.DiapoPanoHP {
     }
     
     .ponctuel{display: block;width: auto;}
+}
+/* Texte Accueil */
+.HPBasGauche{
+    .txt-accueil{padding: 0 em(5px);
+                 strong{color: $violet;}
+                 a{text-decoration: none;color: $rouge;padding: em(1px);
+                   &:hover{background: $rouge;color: $gris-clair;}
+                 }
+
+    }
+
+}
+
+/*Liste pour homepage*/
+.HPBasDroit{
+    #table-actus-hp, #table-actus-hp2{
+        width: 100%;
+        margin: 0 auto;
+        border: 0;
+        thead th{
+            border-bottom: 3px solid #AEC81F;
+        }
+        tbody{}
+        tr{
+            margin: em(6px) auto;
+            display: block;
+            width: 85%;
+        }
+        td{
+            background: white;
+            border: 0;
+            margin: 2px 0;
+            padding: 5px;
+            display: block;
+            border-bottom: 1px solid $rouge;
+            &:hover{
+                background: $rouge;
+            }
+        }
+        a{
+            color: $gris-anthracite;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            font-size: small;
+            &:hover{
+                text-decoration: underline;
+                color: white;
+            }
+        }
+        span.date-display-single{
+            text-align: right;
+            float: right;
+            font-style: italic;
+        }
+    }
+}
+.actus-hp{
+    text-align: center;
+    font-family: Arista,Trebuchet MS,sans-serif;
 }
 
 
