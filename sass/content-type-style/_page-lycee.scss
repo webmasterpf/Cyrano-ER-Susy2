@@ -27,7 +27,7 @@ body .conteneur .conteneur-flex{
 /*######-------- ||| BORDURES ||| --------######*/
 body .conteneur{
     @include breakpoint ($desktop){
-        #colonne-2.page-lycee{@include border-L-violet;}
+        #colonne-1.page-lycee{@include border-R-rouge;}
     }
     
 }
@@ -39,10 +39,11 @@ body .conteneur{
 }
 
 /*######-------- ||| STYLE ||| --------######*/
-h1.titre-lycee,h1.title-classes{
+h1.titre_page_lycee,h1.title-classes{
     font-size: em(24px);
     color: $violet;
-    line-height: 1.0em
+    line-height: 1.0em;
+text-align:center;        
 }
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
@@ -74,9 +75,28 @@ strong,b{
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 #colonne-1.page-lycee{
-    h2{}
-h3{}
-h4{}
+h2{}
+h3{color: $violet;}
+h4{color: $rouge;}
+p{
+    padding: em(7px);
+}
+
+
+a{
+    text-decoration: none;
+    color: $rouge;
+    font-size: small;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+table{
+    margin: 5px auto;
+    text-align: center;
+}
+
 p{}
 ul{
     width: auto;
@@ -88,7 +108,7 @@ img{
     @include adaptable-img;
     width: auto;
     float: none;
-    border: em(2px) solid $violet;
+    border: em(2px) solid $rouge;
     padding: em(2px);
 }
 div.illus-lycee{
@@ -130,66 +150,39 @@ aside.diapo_lycee{
         margin: em(10px) 0 0;
     }
 }
+#media-lycee{
+    width: 60%;
+    margin: 0 auto;
+    @include breakpoint ($desktop){
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: em(85px);
+        height: 0;
+        overflow: initial;
+    }
+    iframe,object{
+        border: em(2px) solid $violet;
+        padding: em(1px);
+        @include img-centered;
+        max-width: 95%;
 
-} 
-/*######-------- COLONNE 2 --------######*/
-#colonne-2.page-lycee{
-    h2,h3,h4,p,ul,ol,img{
-        margin: 0;
-    }
-    h2{
-        color: $vert;
-        padding: em(5px);
-    }
-    h3{
-        color: $violet;
-        padding: em(5px);
-    }
-    h4{
-        padding: em(5px);
-        color: $violet;
-    }
-    p{
-        padding: em(5px);
-        line-height: 1.5em;
-            }
-    ul{
-        padding: em(5px);
-            }
-    img{
-        
-    }
-    a{
-        color: $violet;
-        text-decoration: none;
-        padding: em(2px);
-        &:hover{
-            color: white;
-            background: $violet;
+        @include breakpoint ($desktop){
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
         }
     }
-    form{margin: 0 6em;}
-    table{
-        margin: 0 auto;
-        //display:table;//casse le système de stacktable js
-        tbody{
-            max-width: 100%;
 
-            tr{
-                border:0;
-            }
-            tr.even{
-                background: $gris-clair;
-            }
-            tr.odd{
-                background: $gris-clair-moyen;
-            }
-            td{}
-        }
-    }
-    div.content{
-        //style pour le dernier élément § de content
-        p.external-content{
+
+}
+
+ div.content{
+        //style pour le conteneur d'une iframe via JS
+       
+        p.external-content,#media-lycee{
             width: 95%;
         margin: em(15px) auto;
         @include breakpoint ($desktop){
@@ -221,6 +214,107 @@ aside.diapo_lycee{
         }
     }
     }
+    /*TABLES STYLES DIVERS*/
+.table_generik{
+    border: 0px solid black;width: 75%;margin: 0 auto;
+    tbody{
+        border: 0;
+    }
+     tr{
+    border: 0px solid black;
+}
+ tr.ligne_1{
+    background: transparent;
+    color: black;
+}
+ tr.ligne_2{
+   background: $vert;
+   color: white;
+}
+ td{
+    border: 0px solid black;
+   font-size: small;
+}
+}
+
+#table_frais{
+    border: 0;
+    width: 100%;
+}
+tr.tf_line_1{
+    color: white;
+    background: #01AAD3;
+}
+tr.tf_line_2{
+    color: #E85231;
+    background: white;
+}
+/*style lien en savoir plus*/
+li.node_read_more a{
+color : red;
+text-decoration: none;
+text-align:left;
+}
+li.node_read_more a:hover{
+text-decoration: underline;
+}
+} 
+/*######-------- COLONNE 2 --------######*/
+#colonne-2.page-lycee{
+    h2,h3,h4,p,ul,ol,img{
+        margin: 0;
+    }
+    h2{
+        color: $violet;
+        padding: em(5px);
+    }
+    h3{
+        color: $rouge;
+        padding: em(5px);
+    }
+    h4{
+        padding: em(5px);
+        color: $rouge;
+    }
+    p{
+        padding: em(5px);
+        line-height: 1.5em;
+            }
+    ul{
+        padding: em(5px);
+            }
+    img{
+        
+    }
+    a{
+        color: $violet;
+        text-decoration: none;
+        padding: em(2px);
+        &:hover{
+            color: white;
+            background: $violet;
+        }
+    }
+    form{margin: 0 6em;}
+    table{
+        margin: 0 auto;
+        //display:table;//casse le système de stacktable js
+        tbody{
+            max-width: 100%;
+
+            tr{
+                border:0;
+            }
+/*            tr.even{
+                background: $gris-clair;
+            }
+            tr.odd{
+                background: $gris-clair-moyen;
+            }*/
+            td{}
+        }
+    }
+   
     
   #video_lycee{
     width: 95%;
@@ -248,71 +342,121 @@ aside.diapo_lycee{
         }
     }
 }
-   
-}
-
-#colonne-2.page-classes{
-    padding: 0.5em;
-}
-
-
-
-#colonne-3.page-lycee{
- #docs_lycee{
-    
-     h3{
-    font-family:$AristaFont;
-    text-align: center;
-    color: $violet;
-    padding: 5px 0;
-    font-size: medium;
-    margin: 0 0 5px 0;
-}
- table{
-    
+   #docs-utiles-lycee{
+    background:  url(../images/bg_doc_utile_rp.jpg) repeat left top ;
     margin: 0 auto;
-    width: 95%;
-    
-    border: em(3px) solid $gris-clair-moyen;
-    background: #EFEFEF;
-    box-shadow:0px 0px 7px 1px $prune;
-    -moz-box-shadow: 3px $prune;
-    -webkit-box-shadow: 3px $prune;
-    behavior: url(/sites/all/libraries/PIE/PIE.htc);
-   position: relative;
-}
- tbody{
-   border: 0;
-    padding: em(10px) em(15px);
-    
-}
-tr{
-    border: 0;
-    background: 0;
+    width: 80%;
+    padding: em(20px) 0;
+    @include arrondis (em(5px));
+     position: relative;
+     h3{
+    text-align: center;
+    color: $rouge;
+    margin: 10px 0;
+    font-family: Arista,Trebuchet MS, sans-serif;
 
 }
-td{
-    text-align: center;
-   
-    a{
-    display: block;
-    color: $prune;
+a{
+    color: #606070;
+    display: list-item;
+    list-style-position: inside;
+    list-style-type: square;
     text-decoration: none;
-   
-    font-size: small;
-    &:hover{
-    background: $rose-fushia;
-    @include arrondis(em(10px));
-    @include PIE;
-   position: relative;
+    padding: 2px;
+
 }
+a:hover{
+    background: $rouge;
+    color: white;
+    padding: 2px 2px 5px;
 }
-}
- 
- 
- .filefield-icon{
+.filefield-icon {
     display: none;
 }
 }
 
+
+.table-docs-utiles-lycee table{}
+.table-docs-utiles-lycee tbody{}
+.table-docs-utiles-lycee tr{
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+}
+.table-docs-utiles-lycee td{
+
+}
+}
+
+
+
+
+.taxo_ficheform{
+    background: #ACC624;
+    color: #606070;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    width: 200px;
+}
+
+.projets-annee{}
+.projets-annee h3{font-style: italic;text-align: center;}
+.projets-annee table{box-shadow: #555 1px;}
+
+#program{}
+#realise{}
+
+/*********************************
+----------------------------------
+---- BLOC rostand ACTUS et AUTRES EVENEMENTS---------
+---------------------------------*/
+#bloc_rostand_actus, #bloc_autre_event{
+  background-color: white;
+  background-image: url(../images/bg_rostand_actus_ht.jpg),url(../images/bg_rostand_actus_bas.jpg);
+  background-position: left em(23px), left bottom;
+  background-repeat: no-repeat;
+    margin: 0 auto;
+    padding: em(5px) 0;
+    width: 66%;//pour que le fond soit bien ajusté
+     h3{
+    color: $bleu-turquoise;
+    font-family: $AristaFont;
+    padding: em(5px);
+    text-align: center;
+     font-size: large;
+}
+tr{
+    &.odd,&.even{
+        background: transparent;
+    }
+}
+ td{}
+ tbody{
+  
+
+}
+.table_rostandactus,.table_ae
+{
+    tbody,td{
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    display: block;
+    margin: em(5px) 0;
+    padding: 0 0 0 em(5px);
+    
+    }
+ tr{
+    background: none repeat scroll 0 0 transparent;
+    border: 0;
+}
+ a{
+    text-decoration: none;
+    color: $gris-anthracite;
+    font-size: small;
+    &:hover{
+    background: $rouge;
+    color: white;
+}
+}
+}
 }

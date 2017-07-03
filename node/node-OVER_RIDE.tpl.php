@@ -20,6 +20,11 @@ include($theme_path .'/includes/regions_inc/inc_region_col_1.php');
            global $theme_path;
               include ($theme_path.'/includes/regions_inc/inc_region_col_1.php');
               ?>
+            Inclusion d'éléments propres au site web
+                   <?php
+           global $theme_path;
+              include ($theme_path.'/includes/dedicates_inc/inc_region_col_1.php');
+              ?>
         </div><!-- /colonne1 -->
         <!--______________COLONNE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
