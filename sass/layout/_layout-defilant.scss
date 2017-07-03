@@ -37,6 +37,12 @@ aside.annonce-container{
     display: block;
     max-width: 100%;
     margin: 0 auto;
+    clear: both;
+        &:after,&:before{
+                content: " ";
+                display: block;
+                clear: both;
+            }
     .views_slideshow_cycle_main,div.annonce{
         max-width: 100%;
     }

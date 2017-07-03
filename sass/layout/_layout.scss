@@ -44,9 +44,10 @@ body {
         }
         .content-top{
             //pour breakpoint voir _layout-bp-desktop.scss
-            @include span( 4 of $mobilecol);   
-             @include break;
-                &:after{
+
+            @include full;
+            @include break;
+            &:after{
                 content: " ";
                 display: block;
                 clear: both;

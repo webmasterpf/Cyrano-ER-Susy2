@@ -54,7 +54,10 @@
         background: 0;
         border: 0;
     }
-     img{@include adaptable-img;}
+     img{@include adaptable-img;
+         display: block;
+    margin: 0 auto;
+     }
     iframe{
         @include breakpoint ($desktop){
             margin: 1em 0 0 2em;
@@ -128,10 +131,7 @@ aside.DiapoPanoHP {
         }
     }
 }
-.actus-hp{
-    text-align: center;
-    font-family: Arista,Trebuchet MS,sans-serif;
-}
+
 
 
 /*
