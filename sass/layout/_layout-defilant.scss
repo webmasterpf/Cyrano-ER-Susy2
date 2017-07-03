@@ -46,6 +46,10 @@ aside.annonce-container{
     .views_slideshow_cycle_main,div.annonce{
         max-width: 100%;
     }
+    @include breakpoint ($mobile){
+        min-height: em(160px);
+        
+    }
 }
 
 /*Ajouter la classe via block-class dans les paramètres du bloc
