@@ -11,11 +11,6 @@
 //@include breakpoint ($tablet){}
 
 
-
-.vdl-galerie-image .gallery-slides
-{
-    img{@include adaptable-img;}
-}
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
     .titre-flex{order:0;}
@@ -24,9 +19,9 @@ body .conteneur .conteneur-flex{
     #bloc-droit-pole {}
     @include breakpoint ($desktop){
         .titre-flex{order:0;max-height: 4em;}
-        #bloc-gauche-pole{order:1;}
-        #bloc-centre-pole {order:2;}
-        #bloc-droit-pole {order:3;}
+        .pole_col1 {order:1;}
+        .pole_col2  {order:2;}
+        .pole_col3 {order:3;}
     }
 }
 /*######-------- ||| BORDURES ||| --------######*/
@@ -41,114 +36,87 @@ h1.page-pole{
     text-align: center;
       font-family: $AristaFont;
       font-size: x-large;
-      color: $violet;
+      color: $rouge;
+}
+
+/*********************************
+----------------------------------
+---- PAGE POLE FORMATION NODE.TPL --
+----------- LISTE --------------
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+
+.page-pole {
+    h3.title{
+        background: url("../images/bg_titre_pole.jpg") no-repeat scroll left top transparent;
+        color: white;
+        display: block;
+        font-family: $AristaFont;
+        font-size: medium;
+        height: em(30px);
+        margin: 0 auto;
+        padding: 12px 0;
+        text-align: center;
+        width: 93%;
+    }
+    .table-pole-formations{
+        width: 90%;
+        margin: 0 auto;
+        background: url("../images/bg_ivoire_pole.jpg") no-repeat scroll left top transparent;
+        display: block;
+        padding: 10px 5px;
+        tbody{
+            width: 100%;
+            display: block;
+            border: 0;
+        }
+        tr{
+            display: block;
+            margin: 0 auto;
+            width: 95%;
+            background: 0;
+            border: 0;
+
+        }
+        td{
+            padding: 5px 11px;
+            width: 91%;
+            display: block;
+            a{
+
+            }
+        }
+
+        a{
+            text-decoration: none;
+            color: $gris-anthracite;
+            font-weight: bold;
+            font-size: small;
+            display: block;
+            text-align: center;
+
+            padding: em(10px) 0;
+            &:hover{
+                color: $rouge;
+            }
+        }
+
+        p{
+            display: block;
+            padding: 0;
+            text-align: center;
+
+        }
+    }
+
+    hr.sep-liste-pole{
+        border-bottom: em(1px) solid $rouge;
+        width: 75%;
+        margin: 0 auto;
+        height: 0;
+    }
 }
 
 /*------------------------------------
-        PAGE POLE-FILIERES
-_______________________________________*/
-
-.views-field-field-complement-ficheform-value{
-    font-size: em(10px);
-    margin: 0 auto;
-    text-align: center;
-    width: em(200px);
-}
-aside.filiere-techno,aside.filiere-pro,aside.filiere-bts
-{
-    
-    table{
-        @include ombrage-bas(0px,3px,1px,#564E4E);
-        background: $gris-clair;
-        margin: 0 auto;
-            }
-
-            tr.even,tr.odd{
-                border: 0;
-            }
-                  
-    h3{
-        margin: em(5px);
-        text-align: center;
-        font-family:$AristaFont;
-            font-size: medium;
-    }
-    p{
-        font-size: x-small;
-    }
-a{
-    text-decoration: none;
-    color: #543F4F;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    padding: em(2px);
-    display: block;
-    font-size: small;
-    &:hover{
-    background: $gris-clair-typo;
-    @include arrondis(0.6em);
-    color: $gris-clair;
-    }
-}
-}
-/*Filiere Techno*/
-.filiere-techno{
-
-    padding: em(5px);
-    h3{
-        color: $rose-fushia;
-    }
-    table{
-        border: em(3px) solid $rose-fushia;
-
-    }
-    tbody{}
-    tr{}
-    td{
-        padding: em(5px);
-        color: $violet;
-    }
-
-}
-
-
-
-/*Filiere Pro*/
-.filiere-pro{
-    padding: em(5px);
-    h3{
-        color: $bleu-turquoise;
-
-    }
-    table{
-        border: em(3px) solid $bleu-turquoise;
-    }
-    tbody{}
-    tr{}
-    td{
-        padding: em(5px);
-        color: $violet;
-    }
-
-}
-
-
-/*Filiere BTS - Prépas*/
-.filiere-bts{
-    padding: em(5px);
-    h3{
-        color: $rose-fushia;
-
-    }
-    table{
-        border: em(3px) solid $rose-fushia;
-
-    }
-    tbody{}
-    tr{}
-    td{
-        padding: em(5px);
-        color: $violet;
-    }
-}
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
