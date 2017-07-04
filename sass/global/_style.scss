@@ -17,7 +17,7 @@
         @include font-size(s);//taille avec typey
 //        background: chocolate;//supprimer en PROD
         a {
-            color: $rose-fushia;
+            color: $rouge;//couleur du fil d'ariane
             text-decoration: none;
               font-size: small;
             &:hover {

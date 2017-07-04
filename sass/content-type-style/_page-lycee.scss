@@ -152,7 +152,7 @@ aside.diapo_lycee{
 }
 #media-lycee{
     width: 60%;
-    margin: 0 auto;
+    margin: em(20px) auto;
     @include breakpoint ($desktop){
         position: relative;
         padding-bottom: 56.25%;
@@ -344,46 +344,52 @@ text-decoration: underline;
 }
    #docs-utiles-lycee{
     background:  url(../images/bg_doc_utile_rp.jpg) repeat left top ;
-    margin: 0 auto;
+    margin: em(5px) auto;
     width: 80%;
-    padding: em(20px) 0;
+    padding: em(5px) 0;
     @include arrondis (em(5px));
      position: relative;
      h3{
     text-align: center;
     color: $rouge;
-    margin: 10px 0;
-    font-family: Arista,Trebuchet MS, sans-serif;
-
+    margin: em(5px) 0;
+    font-family: $AristaFont;
+    font-size: large;
 }
 a{
-    color: #606070;
+    color: $gris-anthracite;
     display: list-item;
     list-style-position: inside;
     list-style-type: square;
     text-decoration: none;
-    padding: 2px;
-
-}
-a:hover{
+    padding: em(2px);
+        font-size: small;
+ &:hover{
     background: $rouge;
     color: white;
-    padding: 2px 2px 5px;
+    padding: em(2px) em(2px) em(5px);
 }
+}
+
 .filefield-icon {
     display: none;
 }
 }
 
 
-.table-docs-utiles-lycee table{}
-.table-docs-utiles-lycee tbody{}
-.table-docs-utiles-lycee tr{
+.table-docs-utiles-lycee {
+    table{}
+    tbody{
+        border: 0;
+        background: 0;
+    }
+tr{
     background: none repeat scroll 0 0 transparent;
     border: 0 none;
 }
-.table-docs-utiles-lycee td{
+td{
 
+}
 }
 }
 
@@ -421,8 +427,7 @@ a:hover{
      h3{
     color: $bleu-turquoise;
     font-family: $AristaFont;
-    padding: em(5px);
-    text-align: center;
+     text-align: center;
      font-size: large;
 }
 tr{
