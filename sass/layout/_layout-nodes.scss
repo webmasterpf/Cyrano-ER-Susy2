@@ -414,7 +414,8 @@ body .conteneur{
   }
   
   .col1_layout_8_4{
-
+      @include span($mobilecol);
+               @include clearfix;
       @include breakpoint ($tablet){
           @include span(first 5 of $tabletcol);
 
@@ -425,6 +426,7 @@ body .conteneur{
       }
   }
   .col2_layout_8_4{
+       @include span($mobilecol);
       @include breakpoint ($tablet){
             @include span(last 3 of $tabletcol);
         }
@@ -435,6 +437,8 @@ body .conteneur{
   }
   
     .col1_layout_9_3{
+        @include span($mobilecol);
+               @include clearfix;
             @include breakpoint ($tablet){
             @include span(first 6 of $tabletcol);
          
@@ -445,6 +449,7 @@ body .conteneur{
         }
     }
     .col2_layout_9_3{
+         @include span($mobilecol);
          @include breakpoint ($tablet){
             @include span(last 2 of $tabletcol);
            
