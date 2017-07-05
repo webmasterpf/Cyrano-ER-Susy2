@@ -26,62 +26,134 @@ body .conteneur .conteneur-flex{
 body .conteneur {
     @include breakpoint ($desktop){
         #colonne-1.fiche-formation{}
-        #colonne-2.fiche-formation{}
+        #colonne-2.fiche-formation{@include border-R-rouge;}
         
         }
     
 }
 /*######-------- ||| STYLE ||| --------######*/
-h1.titre_ficheform{
-    color: $rose-fushia;
+h1.titre_fiche{
+    color: $gris-anthracite;
+    margin: em(5px);
+    line-height: 1em;
 }
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
-#colonne-1.fiche-formation,#colonne-2.fiche-formation{
-  a{
-    color: $rose-fushia;
-    padding: 0 em(2px);
-    font-size: small;
-}
- a:hover{
-     background: $rose-fushia;
-    color: white;
-    text-decoration: none;
-}
-h2{
-    color: $bleu-turquoise;
-    font-size: medium;
-    font-family:$TrebuchetFont;
-}
- h3{
-    font-size: smaller;
-}
- h4{
-    font-size: small;
-    color: $vert;
-}
- ul{
-    list-style: circle inside;
-}
- strong{
-    color: $bleu-turquoise;
+#colonne-1.fiche-formation,#colonne-2.fiche-formation,#colonne-3.fiche-formation{
+
+#deco-ficheform img{
+    display: block;
+    margin: 0 auto;
+    border: em(1px) solid $rouge;
+    @include arrondis (em(5px));
+    @include PIE;
+    position: relative;
 }
 
-#deco-ficheform{
+
+
+
+.content-1,.content-2{
+    p{
+        padding: em(3px);
+    }
+    h2{
+        color: $rouge;
+    }
+    h3{
+        color: $vert;
+    }
+} 
+
+#bloc_docs_ficheform{
+    padding: em(10px) 0;
     margin: 0 auto;
     width: 95%;
-    img{
+    h3{
+        background: transparent;
+        color: $gris-anthracite;
+        display: block;
+        padding: em(5px) em(5px) em(12px);
+        text-align: center;
+        background-size: contain;
+        @include breakpoint ($desktop,$tablet){
+            background-size: initial;    
+            background: url("../images/bg_infosplus_rouge.jpg") no-repeat scroll em(10px) top transparent;
+            color: white;
+        }
+    }
+}
+
+
+#table-ficheform-docs{
+    background: url("../images/bg_bloc_ivoire_ht.jpg") no-repeat scroll left top transparent;
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    background-size: cover;
+    @include breakpoint ($desktop,$tablet){
+    background-size: initial;    
+    }
+    tbody{
+        display: block;
+        height: em(140px);
+        padding: em(10px);
+        background: url("../images/bg_bloc_ivoire_bas.jpg") no-repeat scroll left bottom transparent;
+        border: 0;
+        background-size: contain;
+        @include breakpoint ($desktop,$tablet){
+    background-size: initial;    
+    }
+    }
+tr{
+    background: 0;
+    border: 0;
+    width: 94%;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
  
- border: em(3px) solid $rose-fushia;
- @include ombrage-bas (0,em(5px),0.5em,#564E4E);
- @include adaptable-img;
+ td{
+    display: block;
+    width: 100%;
+}
+ a{
+     border-bottom: 1px solid $rouge;
+    color: $gris-anthracite;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    margin:  em(3px) 0;
+    font-size: small;
+     &:hover{
+    color: $rouge;
 }
 }
 
-    
+}
+
+#bloc_docs_ficheform .filefield-icon {
+    display: none;
+}
+     ul{
+        padding:0;
+        margin:0;
+        
+         li{
+        padding: em(2px);
+        list-style: circle inside none;
+        line-height: inherit;
+    }
+    }   
 }
 
 /*¤¤¤ STYLES PROPRES ¤¤¤*/
 #colonne-1.fiche-formation{
+    
+    
+    margin: 0 5px 0 0;
+
     h3{
         color: $rose-fushia;
     }
@@ -164,47 +236,3 @@ h2{
     }
 }
 
-.views-field-field-complement-info-formation-value{text-align: center;margin: 0 auto;width: 160px;}
-
-/*------------------------------------
-        PAGE FICHE FORMATION
-_______________________________________*/
-
-
-#complement-ficheform p{
-    font-family:$AristaFont;
-    font-size: large;
-    color: $violet;
-}
-#docs_ficheform {
-    background: $gris-clair;
-    border: em(3px) solid $violet;
-    width: 95%;
-    margin: em(15px) auto;
-    @include ombrage-bas (0,em(5px),0.5em,#564E4E);
-     table{
-         width: 98%;
-}
- td{
-    text-align: center;
-    
-    margin: 0 auto;
-    display: block;
-}
- td a{
-    text-decoration: none;
-    color: #543F4F;
-    
-}
- td a:hover{
-     background: $rose-fushia;
-    border-radius: 10px;
-}
- .filefield-icon{
-    display: none;
-}
-}
-
-.taxo-ficheform{
-   font-style: italic;
-}

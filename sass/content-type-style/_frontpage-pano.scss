@@ -4,9 +4,22 @@
 |--------------------------------------*/
 
   //@include susy-breakpoint ($mobile){}
-  //@include susy-breakpoint ($desktop){}
+  //@include breakpoint ($desktop){}
   //@include susy-breakpoint ($tablet){}
 
+  body{
+      background: none;
+      @include breakpoint ($desktop,$tablet){
+              
+              background:transparent  url(../images/bg_body_no-rp.jpg) no-repeat em(-112px) top ;/*reduction de 4lignes : -112px*/
+          }
+      section.conteneur{
+          background: white;
+          @include breakpoint ($desktop,$tablet){
+              background: none;
+          }
+      }
+  }
 
 /********************/
 /*ZONES PAGE ACCUEIL*/
@@ -59,8 +72,13 @@
     margin: 0 auto;
      }
     iframe{
+        /*Video présentation lycée*/
+
+    
+        border: em(2px) solid $rouge;
+    padding: em(3px);
         @include breakpoint ($desktop){
-            margin: 1em 0 0 2em;
+            margin: 1em auto;
         }
         
     }
@@ -81,9 +99,8 @@ aside.DiapoPanoHP {
                  a{text-decoration: none;color: $rouge;padding: em(1px);
                    &:hover{background: $rouge;color: $gris-clair;}
                  }
-
     }
-
+    
 }
 
 /*Liste pour homepage*/

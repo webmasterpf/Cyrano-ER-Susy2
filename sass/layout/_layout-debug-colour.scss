@@ -255,7 +255,59 @@ body .conteneur{
 
     }
 }
-
+body .conteneur{
+    .col1_layout_3_5_4{
+        background: pink;
+          @include breakpoint ($tablet){
+       
+            background: #00CC99;
+        }
+        @include breakpoint ($desktop){
+       
+            background: #cccccc;
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+       
+            background: violet;
+        }
+    }
+    .col2_layout_3_5_4{
+              
+        background: khaki;
+       
+        @include breakpoint ($tablet){
+       
+            background: tomato;
+        }
+        @include breakpoint ($desktop){
+       
+          background: hotpink;
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+       
+            background: royalblue;
+        }
+    }
+    .col3_layout_3_5_4{
+         background: #00c9fe;
+       
+        @include breakpoint ($tablet){
+       
+            background: purple;
+        }
+        @include breakpoint ($desktop){
+       
+           background:gainsboro ;
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+       
+            background: violet;
+        }
+    }
+}
 body .conteneur{
     .col1_layout_2_7_3{
      
