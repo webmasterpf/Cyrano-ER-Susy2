@@ -17,10 +17,10 @@ body .conteneur .conteneur-flex{
     #colonne-2.page-lycee {order:1;}
     #colonne-3.page-lycee {order:2;}
     @include breakpoint ($desktop){
-    #colonne-1.page-lycee {order:1;}
-    #colonne-1.page-lycee span{display: initial;}
-    #colonne-2.page-lycee {order:2;}
-    #colonne-3.page-lycee {order:3;}
+        #colonne-1.page-lycee {order:1;}
+        #colonne-1.page-lycee span{display: initial;}
+        #colonne-2.page-lycee {order:2;}
+        #colonne-3.page-lycee {order:3;}
     }
 }
 
@@ -29,7 +29,7 @@ body .conteneur{
     @include breakpoint ($desktop){
         #colonne-1.page-lycee{@include border-R-rouge;}
     }
-    
+
 }
 /*######-------- ||| BREAKPOINTS ||| --------######*/
 @include breakpoint ($mobile){
@@ -43,7 +43,7 @@ h1.titre_page_lycee,h1.title-classes{
     font-size: em(24px);
     color: $violet;
     line-height: 1.0em;
-text-align:center;        
+    text-align:center;        
 }
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
@@ -51,140 +51,108 @@ text-align:center;
 #colonne-2.page-lycee,
 #colonne-3.page-lycee{
     p{
-    padding: em(5px);
-}
-span{
-    font-size: small;
-    padding: em(5px);
-}
-strong,b{
-    color: $rose-fushia;
-}
+        padding: em(5px);
+    }
+    span{
+        font-size: small;
+        padding: em(5px);
+    }
+    strong,b{
+        color: $rose-fushia;
+    }
     a{
         color: $violet;
         text-decoration: none;
         &:hover{
             text-decoration: underline;
         }
-        
+
     }
-    
+
 }
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 #colonne-1.page-lycee{
-h2{}
-h3{color: $violet;}
-h4{color: $rouge;}
-p{
-    padding: em(7px);
-}
+    h2{}
+    h3{color: $violet;}
+    h4{color: $rouge;}
+    p{
+        padding: em(7px);
+    }
 
 
-a{
-    text-decoration: none;
-    color: $rouge;
-    font-size: small;
-    &:hover{
-        text-decoration: underline;
-    }
-}
-
-table{
-    margin: 5px auto;
-    text-align: center;
-}
-
-p{}
-ul{
-    width: auto;
-}
-img{
-    //@include ombrage(0.3em,0,0,0.1em);
-    display: block;
-    margin: 0 auto;
-    @include adaptable-img;
-    width: auto;
-    float: none;
-    border: em(2px) solid $rouge;
-    padding: em(2px);
-}
-div.illus-lycee{
-    img{
-        
-        transform: scale(0.8);
-    }
-}
-a{
-    &:hover{}
-}
-
-h2 a{}
-h2 a:hover{}
-h3 a{}
-h3 a:hover{}
-h4 a{}
-h4 a:hover{}
-aside.diapo_lycee{
-    display: block;
-    margin: 0 auto;
-    width: em(175px) !important;
-    width: em(174px);/*IE*/
-     * {//cible le contenu
-        position:relative;
-        /*position:relative !important;*/
-        min-height: 100%;
-    }
-    .views_slideshow_cycle_main{
-        /*position:relative !important;*/
-        
-        
-    }
-    .views_slideshow_cycle_slide{
-        overflow: auto;
-    }
-    img{
-        border: em(2px) solid $violet;
-        margin: em(10px) 0 0;
-    }
-}
-#media-lycee{
-    width: 60%;
-    margin: em(20px) auto;
-    @include breakpoint ($desktop){
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: em(85px);
-        height: 0;
-        overflow: initial;
-    }
-    iframe,object{
-        border: em(2px) solid $violet;
-        padding: em(1px);
-        @include img-centered;
-        max-width: 95%;
-
-        @include breakpoint ($desktop){
-            position: absolute;
-            top:0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-
+    a{
+        text-decoration: none;
+        color: $rouge;
+        font-size: small;
+        &:hover{
+            text-decoration: underline;
         }
     }
 
+    table{
+        margin: 5px auto;
+        text-align: center;
+    }
 
-}
+    p{}
+    ul{
+        width: auto;
+    }
+    img{
+        //@include ombrage(0.3em,0,0,0.1em);
+        display: block;
+        margin: 0 auto;
+        @include adaptable-img;
+        width: auto;
+        float: none;
+        border: em(2px) solid $rouge;
+        padding: em(2px);
+    }
+    div.illus-lycee{
+        img{
 
- div.content{
-        //style pour le conteneur d'une iframe via JS
-       
-        p.external-content,#media-lycee{
-            width: 95%;
-        margin: em(15px) auto;
+            transform: scale(0.8);
+        }
+    }
+    a{
+        &:hover{}
+    }
+
+    h2 a{}
+    h2 a:hover{}
+    h3 a{}
+    h3 a:hover{}
+    h4 a{}
+    h4 a:hover{}
+    aside.diapo_lycee{
+        display: block;
+        margin: 0 auto;
+        width: em(175px) !important;
+        width: em(174px);/*IE*/
+        * {//cible le contenu
+           position:relative;
+           /*position:relative !important;*/
+           min-height: 100%;
+        }
+        .views_slideshow_cycle_main{
+            /*position:relative !important;*/
+
+
+        }
+        .views_slideshow_cycle_slide{
+            overflow: auto;
+        }
+        img{
+            border: em(2px) solid $violet;
+            margin: em(10px) 0 0;
+        }
+    }
+    #media-lycee{
+        width: 60%;
+        margin: em(20px) auto;
         @include breakpoint ($desktop){
             position: relative;
             padding-bottom: 56.25%;
@@ -192,72 +160,104 @@ aside.diapo_lycee{
             height: 0;
             overflow: initial;
         }
+        iframe,object{
+            border: em(2px) solid $violet;
+            padding: em(1px);
+            @include img-centered;
+            max-width: 95%;
+
+            @include breakpoint ($desktop){
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+            }
         }
-       //style particulier pour le 1er § qui ne contient pas la iframe 
-       p,p:first-child {
+
+
+    }
+
+    div.content{
+        //style pour le conteneur d'une iframe via JS
+
+        p.external-content,#media-lycee{
+            width: 95%;
+            margin: em(15px) auto;
+            @include breakpoint ($desktop){
+                position: relative;
+                padding-bottom: 56.25%;
+                padding-top: em(85px);
+                height: 0;
+                overflow: initial;
+            }
+        }
+        //style particulier pour le 1er § qui ne contient pas la iframe 
+        p,p:first-child {
             margin: 0 em(15px);
             padding: 0;
         }
-         iframe,object{
-        border: em(2px) solid $violet;
-        padding: em(1px);
-        @include img-centered;
-        max-width: 95%;
+        iframe,object{
+            border: em(2px) solid $violet;
+            padding: em(1px);
+            @include img-centered;
+            max-width: 95%;
 
-        @include breakpoint ($desktop){
-            position: absolute;
-            top:0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            @include breakpoint ($desktop){
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
 
+            }
         }
     }
-    }
     /*TABLES STYLES DIVERS*/
-.table_generik{
-    border: 0px solid black;width: 75%;margin: 0 auto;
-    tbody{
-        border: 0;
+    .table_generik{
+        border: 0px solid black;width: 75%;margin: 0 auto;
+        tbody{
+            border: 0;
+        }
+        tr{
+            border: 0px solid black;
+        }
+        tr.ligne_1{
+            background: transparent;
+            color: black;
+        }
+        tr.ligne_2{
+            background: $vert;
+            color: white;
+        }
+        td{
+            border: 0px solid black;
+            font-size: small;
+        }
     }
-     tr{
-    border: 0px solid black;
-}
- tr.ligne_1{
-    background: transparent;
-    color: black;
-}
- tr.ligne_2{
-   background: $vert;
-   color: white;
-}
- td{
-    border: 0px solid black;
-   font-size: small;
-}
-}
 
-#table_frais{
-    border: 0;
-    width: 100%;
-}
-tr.tf_line_1{
-    color: white;
-    background: #01AAD3;
-}
-tr.tf_line_2{
-    color: #E85231;
-    background: white;
-}
-/*style lien en savoir plus*/
-li.node_read_more a{
-color : red;
-text-decoration: none;
-text-align:left;
-}
-li.node_read_more a:hover{
-text-decoration: underline;
-}
+    #table_frais{
+        border: 0;
+        width: 100%;
+    }
+    tr.tf_line_1{
+        color: white;
+        background: #01AAD3;
+    }
+    tr.tf_line_2{
+        color: #E85231;
+        background: white;
+    }
+    /*style lien en savoir plus*/
+    li.node_read_more a{
+        color : red;
+        text-decoration: none;
+        text-align:left;
+    }
+    li.node_read_more a:hover{
+        text-decoration: underline;
+    }
 } 
 /*######-------- COLONNE 2 --------######*/
 #colonne-2.page-lycee{
@@ -279,12 +279,12 @@ text-decoration: underline;
     p{
         padding: em(5px);
         line-height: 1.5em;
-            }
+    }
     ul{
         padding: em(5px);
-            }
+    }
     img{
-        
+
     }
     a{
         color: $violet;
@@ -305,92 +305,92 @@ text-decoration: underline;
             tr{
                 border:0;
             }
-/*            tr.even{
-                background: $gris-clair;
-            }
-            tr.odd{
-                background: $gris-clair-moyen;
-            }*/
+            /*            tr.even{
+                            background: $gris-clair;
+                        }
+                        tr.odd{
+                            background: $gris-clair-moyen;
+                        }*/
             td{}
         }
     }
-   
-    
-  #video_lycee{
-    width: 95%;
-    margin: em(15px) auto;
-    @include breakpoint ($desktop){
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: em(35px);
-        height: 0;
-        overflow: initial;
-    }
-    iframe,object{
-        border: em(2px) solid $violet;
-        padding: em(1px);
-        @include img-centered;
-        max-width: 95%;
 
+
+    #video_lycee{
+        width: 95%;
+        margin: em(15px) auto;
         @include breakpoint ($desktop){
-            position: absolute;
-            top:0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: em(35px);
+            height: 0;
+            overflow: initial;
+        }
+        iframe,object{
+            border: em(2px) solid $violet;
+            padding: em(1px);
+            @include img-centered;
+            max-width: 95%;
+
+            @include breakpoint ($desktop){
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+            }
+        }
+    }
+    #docs-utiles-lycee{
+        background:  url(../images/bg_doc_utile_rp.jpg) repeat left top ;
+        margin: em(5px) auto;
+        width: 80%;
+        padding: em(5px) 0;
+        @include arrondis (em(5px));
+        position: relative;
+        h3{
+            text-align: center;
+            color: $rouge;
+            margin: em(5px) 0;
+            font-family: $AristaFont;
+            font-size: large;
+        }
+        a{
+            color: $gris-anthracite;
+            display: list-item;
+            list-style-position: inside;
+            list-style-type: square;
+            text-decoration: none;
+            padding: em(2px);
+            font-size: small;
+            &:hover{
+                background: $rouge;
+                color: white;
+                padding: em(2px) em(2px) em(5px);
+            }
+        }
+
+        .filefield-icon {
+            display: none;
+        }
+    }
+
+
+    .table-docs-utiles-lycee {
+        table{}
+        tbody{
+            border: 0;
+            background: 0;
+        }
+        tr{
+            background: none repeat scroll 0 0 transparent;
+            border: 0 none;
+        }
+        td{
 
         }
     }
-}
-   #docs-utiles-lycee{
-    background:  url(../images/bg_doc_utile_rp.jpg) repeat left top ;
-    margin: em(5px) auto;
-    width: 80%;
-    padding: em(5px) 0;
-    @include arrondis (em(5px));
-     position: relative;
-     h3{
-    text-align: center;
-    color: $rouge;
-    margin: em(5px) 0;
-    font-family: $AristaFont;
-    font-size: large;
-}
-a{
-    color: $gris-anthracite;
-    display: list-item;
-    list-style-position: inside;
-    list-style-type: square;
-    text-decoration: none;
-    padding: em(2px);
-        font-size: small;
- &:hover{
-    background: $rouge;
-    color: white;
-    padding: em(2px) em(2px) em(5px);
-}
-}
-
-.filefield-icon {
-    display: none;
-}
-}
-
-
-.table-docs-utiles-lycee {
-    table{}
-    tbody{
-        border: 0;
-        background: 0;
-    }
-tr{
-    background: none repeat scroll 0 0 transparent;
-    border: 0 none;
-}
-td{
-
-}
-}
 }
 
 
@@ -417,51 +417,191 @@ td{
 ---- BLOC rostand ACTUS et AUTRES EVENEMENTS---------
 ---------------------------------*/
 #bloc_rostand_actus, #bloc_autre_event{
-  background-color: white;
-  background-image: url(../images/bg_rostand_actus_ht.jpg),url(../images/bg_rostand_actus_bas.jpg);
-  background-position: left em(23px), left bottom;
-  background-repeat: no-repeat;
+    background-color: white;
+    background-image: url(../images/bg_rostand_actus_ht.jpg),url(../images/bg_rostand_actus_bas.jpg);
+    background-position: left em(23px), left bottom;
+    background-repeat: no-repeat;
     margin: 0 auto;
     padding: em(5px) 0;
     width: 66%;//pour que le fond soit bien ajusté
-     h3{
-    color: $bleu-turquoise;
-    font-family: $AristaFont;
-     text-align: center;
-     font-size: large;
-}
-tr{
-    &.odd,&.even{
-        background: transparent;
+    h3{
+        color: $bleu-turquoise;
+        font-family: $AristaFont;
+        text-align: center;
+        font-size: large;
     }
-}
- td{}
- tbody{
-  
+    tr{
+        &.odd,&.even{
+            background: transparent;
+        }
+    }
+    td{}
+    tbody{
 
-}
-.table_rostandactus,.table_ae
-{
-    tbody,td{
-    background: none repeat scroll 0 0 transparent;
-    border: 0 none;
-    display: block;
-    margin: em(5px) 0;
-    padding: 0 0 0 em(5px);
-    
+
     }
- tr{
-    background: none repeat scroll 0 0 transparent;
-    border: 0;
+    .table_rostandactus,.table_ae
+    {
+        tbody,td{
+            background: none repeat scroll 0 0 transparent;
+            border: 0 none;
+            display: block;
+            margin: em(5px) 0;
+            padding: 0 0 0 em(5px);
+
+        }
+        tr{
+            background: none repeat scroll 0 0 transparent;
+            border: 0;
+        }
+        a{
+            text-decoration: none;
+            color: $gris-anthracite;
+            font-size: small;
+            &:hover{
+                background: $rouge;
+                color: white;
+            }
+        }
+    }
 }
- a{
-    text-decoration: none;
-    color: $gris-anthracite;
-    font-size: small;
-    &:hover{
-    background: $rouge;
-    color: white;
+
+/***********************************
+    PAGE CLASSE - TABLE
+************************************
+*/
+h1.titre_classes{
+    color: $rouge;
+    margin: 5px;
 }
+#colonne-1.page-lycee{
+    #table-classes{
+        margin: em(10px);
+        tbody{
+            border: 0;
+            background: 0;
+        }
+        tr{
+            border: 0;
+            background: 0;
+        }
+        td{
+            text-align: center;
+            background: $gris-clair;
+            display: inline-block;
+            margin: em(2px) em(7px);
+            width: auto;
+            vertical-align: text-top;
+        }
+        td:hover {
+            -moz-box-shadow: 0 0 2px #000000;
+            -webkit-box-shadow: 0 0 2px #000000;
+            box-shadow: 0 0 2px #000000;
+        }
+        td a{
+            color: $gris-anthracite;
+            display: block;
+            margin: em(2px) 0;
+            padding: em(3px);
+            text-decoration: none;
+        }
+        td a:hover{
+            background: $rouge;
+            color: white;
+        }
+        .filefield-icon{
+            display: none;
+        }
+
+        h3 {
+            font-size: small;
+            color: $bleu-turquoise;
+            display: block;
+            font-family: $AristaFont;
+            padding: em(5px);
+        }
+    }
 }
-}
+/***********************************
+    PAGE CLASSE - LISTE
+************************************/
+#colonne-1.page-lycee{
+    div.enveloppe-classes{
+ @include span($mobilecol);
+       
+        @include clearfix;
+        @include breakpoint ($tablet){
+            @include span(8 of $tabletcol);
+            
+        }
+        @include breakpoint ($desktop){
+           @include span(8 of 8);//car inclus dans une zone de 8 colonnes
+           @include isolate(-1.3em);
+            @include gutters(.3em);/*Toujours en dernier pour override de la taille des gouttieres*/
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(8 of $tabletcol-landcsape);
+            
+        }
+    }
+    ul.liste-classe{
+               
+        //Layout de la liste en galerie
+        li.classe-item{
+            @include gallery(3 of $mobilecol);
+
+            @include clearfix;
+            @include breakpoint ($tablet){
+                @include gallery(3 of $tabletcol);
+
+            }
+            @include breakpoint ($desktop){
+                @include gallery(4 of $desktopcol);//3 items par lignes
+            }
+            //Pour orientation paysage
+            @include breakpoint ($tabletlandscape){
+                @include gallery(4 of $tabletcol-landcsape);
+            }
+        }
+    }
+    //Style de la liste en galerie
+    ul.liste-classe{
+
+        li{
+            list-style:none;
+            /*min-width: 33%;*/ 
+            text-align: center;
+            background: $gris-clair;
+            
+            margin: em(7px) em(7px);
+            vertical-align: text-top;
+            &:hover {
+                @include ombrage-bloc(0, 0, em(3px), #555);
+            
+            }
+            a{
+                color: $gris-anthracite;
+                display: block;
+                margin: em(2px) 0;
+                padding: em(3px);
+                text-decoration: none;
+                &:hover{
+                    background: $rouge;
+                    color: white;
+                }
+            }
+
+            span.titre-classe{
+                font-size: medium;
+                color: $bleu-turquoise;
+                display: block;
+                font-family: $AristaFont;
+                padding: em(5px);
+            }
+            .filefield-icon{
+                display: none;
+            }
+        }
+    }
 }

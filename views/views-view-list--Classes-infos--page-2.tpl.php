@@ -1,26 +1,18 @@
 <?php
-/**
- * @file views-view-grid.tpl.php
- * Default simple view template to display a rows in a grid.
- *
- * - $rows contains a nested array of rows. Each row contains an array of
- *   columns.
- * - $class contains the class of the table.
- * - $attributes contains other attributes for the table.
- * @ingroup views_templates
- *
- * MISE EN FORME DE LA GRILLE
+/*
+ * Classes ajoutées via Views UI !!
+ * MISE EN FORME DE LA LISTE
  */
 ?>
 <?php
 /* Ce template permet la création d'un layout multicolonne pour les pages de base, en permettant la disposition facile
  * des champs CCK custom, si nécessaires pour une page de base.
 */?>
-<!--______________NODE TPL POUR PAGE CLASSE.TPL CUSTOM________________ -->
+<!--______________NODE TPL POUR PAGE CLASSE - LISTE.TPL CUSTOM________________ -->
 <div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
     <div class="node-inner">
         <!--______________COLONNE 1________________ -->
-            <div id="colonne-1" class="col1_layout_8_4 page-lycee">
+         <div id="colonne-1" class="col1_layout_8_4 page-lycee">
 
 
                <?php print $picture; ?>
@@ -33,7 +25,7 @@
 
 $viewname_ci1 = 'Classes_infos';
 $view = views_get_view ($viewname_ci1);
-$view->set_display('page_1');
+$view->set_display('page_2');
 
 
 //Exécution de le vue
@@ -48,37 +40,28 @@ if ($view->result) {
 //Affiche la vue
 print $output;
 
+if ($view->result) {
+  // Récupération du titre du display
+  $outputhead = '<p class="">'.$view->display_handler->get_option('header').'</p>';
+}
+print $outputhead;
 ?>
           
 
             <div class="content">
+                <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
 
-
-<?php if (!empty($title)) : ?>
-  <h3><?php print $title; ?></h3>
-<?php endif; ?>
-<table id="table-classes" class="<?php print $class; ?>"<?php print $attributes; ?>>
-  <tbody>
-    <?php foreach ($rows as $row_number => $columns): ?>
-      <?php
-        $row_class = 'row-' . ($row_number + 1);
-        if ($row_number == 0) {
-          $row_class .= ' row-first';
-        }
-        if (count($rows) == ($row_number + 1)) {
-          $row_class .= ' row-last';
-        }
-      ?>
-      <tr class="<?php print $row_class; ?>">
-        <?php foreach ($columns as $column_number => $item): ?>
-          <td class="<?php print $column_classes[$row_number][$column_number]; ?>">
-            <?php print $item; ?>
-          </td>
-        <?php endforeach; ?>
-      </tr>
+<?php print $wrapper_prefix; ?>
+  <?php if (!empty($title)) : ?>
+    <h3><?php print $title; ?></h3>
+  <?php endif; ?>
+  <?php print $list_type_prefix; ?>
+    <?php foreach ($rows as $id => $row): ?>
+      <li class="<?php print $classes[$id]; ?>"><?php print $row; ?></li>
     <?php endforeach; ?>
-  </tbody>
-</table>
+  <?php print $list_type_suffix; ?>
+<?php print $wrapper_suffix; ?>
+
             </div>
 
 
