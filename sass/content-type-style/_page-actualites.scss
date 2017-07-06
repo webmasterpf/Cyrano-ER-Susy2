@@ -3,7 +3,7 @@
 
 /*-------------------------------------|
 |       CONTENU CUSTOM NODE.TPL        |
-|       PAGE ACTUALITE LISTE      |
+|       PAGE ACTUALITE GLOBALE      |
 |--------------------------------------*/
 
 //@include breakpoint ($mobile){}
@@ -16,9 +16,9 @@ body .conteneur .conteneur-flex{
     #colonne-2.page-actualites{order:1;}
     #colonne-3.page-actualites{order:3;}
     @include breakpoint ($desktop){
-    #colonne-1.page-actualites{order:1;}
-    #colonne-2.page-actualites{order:2;}
-    #colonne-3.page-actualites{order:3;}
+        #colonne-1.page-actualites{order:1;}
+        #colonne-2.page-actualites{order:2;}
+        #colonne-3.page-actualites{order:3;}
     }
 }
 
@@ -27,251 +27,352 @@ body .conteneur {
     @include breakpoint ($desktop){
         #colonne-2.page-actualites{}
     }
-    
+
 }
 /*######-------- ||| STYLE ||| --------######*/
 h1.titre_page_actualites{
     margin: em(3px);
-    color: $rose-fushia;
+    color: $violet;
     text-align: center;
 }
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
 #colonne-1.page-actualites,
 #colonne-2.page-actualites,
 #colonne-3.page-actualites{
-    .titre-actu{
-    bottom: -20px;
-    left: 3px;
-    position: relative;
-    width: 98%;
-    z-index: 20;
+    .actu-txt-vide p{
+        padding: em(25px) em(5px);
+        text-align: center;
     }
-.img-actu img{
-    float: left;
-    border: em(1px) solid white;
-    @include zoom-css3(1);
-    &:hover{
-        @include zoom-css3-hover(0.95);
+    //Grands blocs - taille
+    #block-views-Actu_liste-block_5,#block-views-Entreprise-block_1,
+    #block-views-Actu_liste-block_3,#block-views-Actu_liste-block_4,#block-views-Entreprise-block_2,
+    #block-views-Entreprise-block_4{
+        width: 93%;
+        margin: 0 auto;
+        padding: em(0px) 0 0;
+
+        h3{
+            color: white;
+            font-family:  $AristaFont;
+            font-size: x-large;
+            text-align: center;
+            padding: 0;
+        }
+        .view-footer{
+
+            text-align: center;
+            padding: em(3px) 0 0;
+            width: 100%;
+            margin: 0 auto;
+            a{
+                color: white;
+                font-family:  $AristaFont;
+                font-size: 12px;
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline
+                }
+            }
+        }
     }
+
+    //Visuels differents selon couleur
+    #block-views-Actu_liste-block_3,#block-views-Actu_liste-block_4,#block-views-Entreprise-block_2,
+    #block-views-Entreprise-block_4{
+        background:  url(../images/bg_bloc_rouge_ht.jpg) no-repeat left top ;
+        background-size: cover;
+
+        .view-footer{
+            background: url(../images/bg_bloc_rouge_bas.jpg) no-repeat left bottom ;
+            background-size: contain;
+        }
+
+    }
+    #block-views-Actu_liste-block_5,#block-views-Entreprise-block_1{
+        background:  url(../images/bg_bloc_violet_ht.jpg) no-repeat left top ;
+        background-size: cover;
+        .view-footer{
+            background: url(../images/bg_bloc_violet_bas.jpg) no-repeat left bottom ;
+            background-size: contain;
+        }
+    }
+
+
 }
 
-    p{
-    padding: em(5px);
-}
-strong,b{
-    color: $prune;
-}
-    a{
-        color: $violet;
-        text-decoration: none;
-        &:hover{
-            text-decoration: underline;
-        }
-        
-    }
-    span{
-        @include font-size(s);
-    }
-    tbody{
-     background: 0;
-     border: 0;
- }
- tr{
-      background: 0;
-     border: 0;
- }
-}
 
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
-#colonne-1.page-actualites{
-    /*Liste actu europe*/
-    #actu-liste-europe p.txt-vide-actu-globale{
-        width: 98%;
-        text-align: center;
+#colonne-1.page-actualites{}
+#colonne-2.page-actualites{}
+#colonne-3.page-actualites{}
+
+
+/*block-views-Actu_liste-block_3=projet;
+block-views-Actu_liste-block_5=RP;
+block-views-Actu_liste-block_4=sorties;
+block-views-Actu_liste-block_6=annonces;
+*/
+
+#table_ag_projets,#table_ag_sorties,#table-entr-ve{
+    margin: 0 auto;
+    width: 100%;
+    tbody{
+        background: none;
+        
+        padding: 25px 0 0;
     }
-    #actu-liste-europe{
-        width: 98%;
-        margin: 0 auto;
+    tr{
+        background: none;
+        border: 0;
+         width: 95%;
+    margin: 0 auto;
+    display: block;
     }
-    #actu-liste-europe h3{
-        font-size: larger;
+}
+
+#table_ag_projets{
+    tr{
+       
+    }
+td{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: $gris-anthracite;
+    font-weight: bold;
+    font-size: small;
+    &:hover{
+    color: $gris-clair;
+}
+}
+
+hr.sep-actus-rouge{
+   
+    margin: 0 auto;
+    border: 1px solid $rouge;
+    height: 1px;
+}
+}
+
+
+#table_ag_sorties,#table-entr-ve{
+    a{
         color: $violet;
-        margin: em(5px);
-        text-align: center;
-        font-family:$AristaFont;
-    }
-    #actu-liste-europe table{
-        border: 3px solid $violet;
-        background: $gris-clair;
-        @include ombrage-table-actu;
-        @include PIE;
-        position: relative;
-    }
-    #actu-liste-europe tbody{}
-    #actu-liste-europe tr{}
-    #actu-liste-europe td{
-        padding: em(2px);
-    }
-    #actu-liste-europe a{
-        color: $prune;
         font-weight: bold;
         text-decoration: none;
-    }
-    #actu-liste-europe a:hover{
-        color: $rose-fushia;
-    }
-}
-#colonne-2.page-actualites{
-    /*Liste annonce RP - Big*/
-    #actu-liste-rp-annonce {
-        margin: 0 auto;
-        width: 98%;
-        p.txt-vide-actu-globale{
-            margin: 0 auto;
-            width: 98%;
-            text-align: center;
-            color: $orange-fonce;
-        }
+        padding: em(2px);
+        display: block;
+        font-size:small;
+        &:hover{
+            color: $rouge;
+            img{
+    @include opacity(0.6);
 
-        h3{
-            color:$bleu-turquoise;
-            text-align: center;
-            margin: em(5px) 0;
-            font-size:large;
-        }
-        img{
-            border: em(2px) solid $rose-fushia;
-            padding: em(1px);
-        }
-        a{
-            color: $rose-fushia;
-            text-decoration: none;
-            &:hover{
-                color: $violet;
-            }
-        }
 
-    }
-/*Liste annonce RP - Small*/
-#actu-liste-rp-annonce2{
-     img{
-    border: em(1px) solid $rose-fushia;
-    padding: em(1px);
+    -moz-box-shadow:inset 0 0 2px #CCC;
+    -webkit-box-shadow:inset 0 0 2px #CCC;
+    box-shadow:inset 0 0 2px #CCC;
 }
- a{
-    color: $rose-fushia;
+        }
+    }
+
+
+}
+
+/*Titre sur image*/
+.titre_actuGlobale{
+    bottom: 30px;
+    left: 3px;
+    position: relative;
+    width: 190px;
+    z-index: 20;
+    background: white;
+    display: block;
+
+}
+.titre_actuGlobale a,.image_actuGlobale img a{
+
+}
+.titre_actuGlobale a:hover{
+    background: $gris-clair;
     text-decoration: none;
+}
+.image_actuGlobale{
+    height:75px;
+    position:relative;
+    width:301px;
+    z-index:15;
+}
+.image_actuGlobale img:hover{
+    -moz-box-shadow:inset 0 0 2px #000000;
+    -webkit-box-shadow:inset 0 0 2px #000000;
+    box-shadow:inset 0 0 2px #000000;
+}
+/*--------------------------------------
+        BLOC REVUE PRESSE ACTU GLOBALE
+        BLOC JOURNEE INTERPRO (ENTR.)
+        BLOC PARTENAIRES (ENTR.)
+---------------------------------------*/
+
+
+
+
+
+#table_ag_rp,#table-entr-ji{
+
+    margin: 0 auto;
+    width: 100%;
+    tbody{
+        background: none;
+        display: block;
+        padding: 25px 0 0;
+    }
+    tr{
+        background: none;
+        border: 0;
+        width: 95%;
+    margin: 0 auto;
+    display: block;
+    }
+    td{
+        text-align: center;
+        display: block;
+    }
+    a{
+        text-decoration: none;
+        color: $gris-anthracite;
+        font-weight: bold;
+        font-size:small;
+        &:hover{
+            color: $gris-clair;
+        }
+    }
+}
+
+
+
+
+hr.sep-actus-violet{
+    
+    margin: 0 auto;
+    border: 1px solid #94127F;
+    height: 1px;
+}
+
+/*------------------------------
+        BLOC ANNONCES
+-----------------------------*/
+
+#block-views-Actu_liste-block_6 tr{}
+#block-views-Actu_liste-block_6 td{}
+
+#block-views-Actu_liste-block_6, #block-views-Entreprise-block_3{
+    background:  url(../images/bg_bloc_violet_petit_ht.jpg) no-repeat left top ;
+    width: 210px;
+    margin: 0 auto;
+    padding: 5px 0 0;
+}
+#block-views-Actu_liste-block_6 h3, #block-views-Entreprise-block_3 h3{
+    color: white;
+    font-family:  $AristaFont;
+    font-size: 20px;
     text-align: center;
-     &:hover{
-    color: $violet;
 }
-}
-
- table{}
- tbody{
-   
- }
- tr{
-
- }
- td{
-    padding: em(3px);
-    vertical-align: top;
-}
-td.col-2{
-    padding-left: em(5px);
-}
-p.txt-vide-actu-globale{
-     margin: 0 auto;
-    width: 98%;
+#block-views-Actu_liste-block_6 .view-footer,#block-views-Entreprise-block_3 .view-footer{
+    background: url(../images/bg_bloc_violet_petit_bas.jpg) no-repeat left bottom ;
     text-align: center;
-    color: $orange-fonce;
+    padding: 3px;
 }
+#block-views-Actu_liste-block_6 .view-footer a,#block-views-Entreprise-block_3 .view-footer a{
+    color: white;
+    font-family:  $AristaFont;
+    font-size: 12px;
+    text-decoration: none;
 }
+#block-views-Actu_liste-block_6 .view-footer a:hover,#block-views-Entreprise-block_3 .view-footer a:hover{
+    text-decoration: underline
+}
+#table_ag_annonces tbody,#table_entr_docprat{width: 200px;}
+#table_ag_annonces td,#table_entr_docprat td{
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    display: block;
+    margin: 5px 0;
+    padding: 0 0 0 5px;
+    width: 200px;
+}
+#table_ag_annonces tr,#table_entr_docprat tr{
+    background: none repeat scroll 0 0 transparent;
+    border: 0;
 
-
-
+}
+#table_ag_annonces a,#table_entr_docprat a{
+    text-decoration: none;
+    color: $gris-anthracite;
+}
+#table_ag_annonces a:hover,#table_entr_docprat a:hover{
+    background: $rouge;
+    color: white;
+}
+#block-views-Actu_liste-block_6 .view-footer{text-align: center;padding: 0px;}
+#block-views-Actu_liste-block_6 .view-footer a{color: white;
+                                               font-family:  $AristaFont;
+                                               font-size: 12px;
+                                               text-decoration: none;
+}
+#block-views-Actu_liste-block_6 .view-footer a:hover{
+    text-decoration: underline
+}
 /*------------------------
 BLOC FLUX RSS ACTU DE L'ASSO
 -----------------------------*/
 #block-aggregator-feed-1{
     h3{
-        color: $rose-fushia;
-        font-family: $AristaFont;
+        color: #01ABCF;
+        font-family: arista,Trebuchet MS,sans-serif;
         padding: 5px;
         text-align: center;
-        font-size: large;
+        font-size: 18px;
     }
     ul{
         list-style: none;
         background:  url(../images/bg_doc_utile_rp.jpg) repeat left top ;
         margin: 0 auto;
-        width: 85%;
-        padding: em(20px) 0;
-        @include arrondis (em(10px));
-        position: relative;
-    }
-    ul li{
-        margin: em(5px) 0;
-        list-style: none;
+        width: 200px;
+        padding: 20px 0;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        @include PIE;
 
-    }
-    li a{
-        text-decoration: none;
-        padding: 2px;
-        display: block;
-        @include arrondis (em(5px));
         position: relative;
-        width: 85%;
-        margin: 0 auto;
-        color: white;
-        background: $rose-fushia;
-        &:hover{
-            background: white;
-            color: $rose-fushia;
-            text-decoration: none;
+        li{
+            margin: 5px 0;
+            list-style: none;
+            a{
+                text-decoration: none;
+                padding: 2px;
+                display: block;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                @include PIE;
+
+                position: relative;
+                width: 175px;
+                margin: 0 auto;
+                color: white;
+                background: $rouge;
+                &:hover{
+                    background: white;
+                    color: $rouge;
+                    text-decoration: none;
+                }
+            }
         }
     }
-
 } 
-
-}
-
-#colonne-3.page-actualites{
-   /*Liste actu VDL*/
-#actu-liste-vdl p.txt-vide-actu-globale{}
-#actu-liste-vdl{
-     margin: 0 auto;
-    width: 98%;
-}
-#actu-liste-vdl h3{
-    font-size: larger;
-    color: $rose-fushia;
-    margin: em(5px);
-    text-align: center;
-    font-family:Arista,trebuchet-MS,sans-serif;
-}
-#actu-liste-vdl table{
-    border: em(3px) solid $rose-fushia;
-    background: $gris-clair;
-    @include ombrage-table-actu;
-    @include PIE;
-   position: relative;
-}
-#actu-liste-vdl tbody{}
-#actu-liste-vdl tr{}
-#actu-liste-vdl td{
-    padding: em(2px);
-}
-#actu-liste-vdl a{
-    color: #564E4E;
-    font-weight: bold;
-    text-decoration: none;
-}
-#actu-liste-vdl a:hover{
-    color: $rose-fushia;
-}
-}
