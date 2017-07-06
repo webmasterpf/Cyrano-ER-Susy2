@@ -146,7 +146,37 @@ h1.titre_page_actualites{
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 #colonne-1.page-actualites{}
-#colonne-2.page-actualites{}
+#colonne-2.page-actualites{
+    /*Titre sur image*/
+    .titre_actuGlobale{
+        bottom: em(30px);
+        left: em(3px);
+        position: relative;
+        width: 45%;
+        z-index: 20;
+        background: white;
+        display: block;
+        a{
+            &:hover{
+                background: $gris-clair;
+                text-decoration: none;
+            }
+        } 
+    }
+
+
+    .image_actuGlobale{
+        height:em(75px);
+        position:relative;
+        width:90%;
+        z-index:15;
+        img:hover{
+            @include ombrage-interne(0,0,em(2px),#000);
+     
+        }
+    }
+
+}
 #colonne-3.page-actualites{}
 
 
@@ -230,35 +260,7 @@ hr.sep-actus-rouge{
 
 }
 
-/*Titre sur image*/
-.titre_actuGlobale{
-    bottom: 30px;
-    left: 3px;
-    position: relative;
-    width: 190px;
-    z-index: 20;
-    background: white;
-    display: block;
 
-}
-.titre_actuGlobale a,.image_actuGlobale img a{
-
-}
-.titre_actuGlobale a:hover{
-    background: $gris-clair;
-    text-decoration: none;
-}
-.image_actuGlobale{
-    height:75px;
-    position:relative;
-    width:301px;
-    z-index:15;
-}
-.image_actuGlobale img:hover{
-    -moz-box-shadow:inset 0 0 2px #000000;
-    -webkit-box-shadow:inset 0 0 2px #000000;
-    box-shadow:inset 0 0 2px #000000;
-}
 /*--------------------------------------
         BLOC REVUE PRESSE ACTU GLOBALE
         BLOC JOURNEE INTERPRO (ENTR.)
