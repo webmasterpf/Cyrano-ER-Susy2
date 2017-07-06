@@ -130,7 +130,7 @@ h1.titre_page_actualites{
     //Visuels petits blocs
     #block-views-Actu_liste-block_6, #block-views-Entreprise-block_3{
         background:  url(../images/bg_bloc_violet_petit_ht.jpg) no-repeat left top ;
-        background-size: cover;
+        background-size: contain;
     }
 
     .view-footer{
@@ -314,29 +314,31 @@ hr.sep-actus-violet{
         BLOC ANNONCES
 -----------------------------*/
 
-
-
 #block-views-Actu_liste-block_6, #block-views-Entreprise-block_3{
    #table_ag_annonces,#table_entr_docprat{
-       tbody{}
-       width: 200px;
-       tr{
-    background: none;
-    border: 0;
-
-}
-     td{
-    background: none repeat scroll 0 0 transparent;
-    border: 0 none;
+      margin: 0 auto;
+    width: 100%;
+    tbody{
+        background: none;
+        display: block;
+        padding: em(25px) 0 0;
+    }
+    tr{
+        background: none;
+        border: 0;
+        width: 95%;
+    margin: 0 auto;
     display: block;
-    margin: 5px 0;
-    padding: 0 0 0 5px;
-    width: 200px;
-}
+    }
+    td{
+       
+        display: block;
+    }
 
  a{
     text-decoration: none;
     color: $gris-anthracite;
+    font-size:small;
    &:hover{
     background: $rouge;
     color: white;
