@@ -416,6 +416,11 @@ ______________________________*/
 ----------------------------------
 ---- BLOC rostand ACTUS et AUTRES EVENEMENTS---------
 ---------------------------------*/
+#colonne-3.page-archive{
+    #bloc_rostand_actus{
+        width: 90%;//Ajustement pour page archive
+    }
+}
 #bloc_rostand_actus, #bloc_autre_event{
     background-color: white;
     background-image: url(../images/bg_rostand_actus_ht.jpg),url(../images/bg_rostand_actus_bas.jpg);

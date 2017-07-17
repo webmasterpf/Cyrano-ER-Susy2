@@ -39,83 +39,53 @@ h1.titre_page_archives{
 #colonne-2.page-archive,
 #colonne-3.page-archive
 {
-    #archives{
-               /*Liste des archives*/
-        table{
-            width: 98%;
-            margin: 0 auto;
-            border: 0;
-        }
-        tbody{}
-        tr{
-            background: $gris-clair;
-            background-color: $gris-clair;
-            display: block;
-            margin: em(2px) 0;
-            border: 0;
-            &:hover{
-                background: #EFA0CA;   
-                border-right: $rose-fushia solid em(2px);
+   .table_archives_actus{
+    padding: em(5px);
+     tbody{}
+ tr{
+     margin: em(5px) 0;
+     border: 0;
+     background: none;
+}
+ td{
+     margin: em(5px) 0;
+    display: block;
+    padding: em(3px);
+}
+ a{
+        text-decoration: none;
+    font-size: small;
+    font-weight: bold;
+    margin: 0 em(10px);
+    color: $rouge;
+     &:hover{
+      color: $violet;
+}
+}
 
-            }
-        }
+span{
+    font-size: small;
+}
 
-        img{
-            border: $violet solid em(1px);
-            float: right;
-            margin: em(2px) em(4px);
-            padding: em(2px);
-        }
-        tr a{
-            color: $rose-fushia;
-            text-decoration: none;
-            padding: em(2px);
-            font-weight: bold;
-            &:hover{
-                color: white;
-                
-            }
-        }
-        td{
-            padding:em(2px) 0;
-            display: inline-block;
-            width: 100%;
-            border: 0;
-            &:hover{
-                
-            }
-            span{
-                font-size: small;
-            }
-        }
+ hr{
+   background: $rouge;
+    width: 75%;
+    margin: 0 auto;
+    height: em(2px);
+    border: 0;
+    @include ombrage-bas(0em, 0em, 0.3em, #aaa);
+}
+ img{
+    float: right;
+    border: em(2px) solid $gris-clair;
+}
+}
 
-        .views-field-tid{
-            text-align: right;
-            font-size: x-small;
-            font-style: italic;
-
-        }
-    }
-     /*Bloc filtre exposé archives*/
-        .archives-exposed{
-            width: 95%;
-            margin: 0 auto;
-            .views-widget-filter-field_date_evenement_value{
-                width: 35%;
-            }
-            .views-exposed-widgets{
-                width: inherit;
-                padding: em(5px);
-                margin: em(5px);
-                background: $gris-clair;
-                border: $rose-fushia solid em(2px);
-                label{
-                    font-size: x-small;
-                }
-            }
-
-        }
-
+/*Pour alignement selecteurs liste archive Entreprise*/
+#views-exposed-form-Archives-block-2 .views-exposed-form .views-exposed-widget {
+    float: left;
+    padding: 0.5em 0.5em 0px 0px;
+}
 }
 
 /*------------------------------------
@@ -124,30 +94,17 @@ ______________________________*/
 
 #colonne-1.page-archive{}
 #colonne-2.page-archive{
-    ul.pager{
-        a{
-            color: $rose-fushia;
-            text-decoration: none;
-            &:hover{
-                color: $violet;
-            }
-
-        }
-      li  a:active{
-            color: $violet;
-            font-weight: bold;
-        }
-    }
-    .actuGlobale-archives{
-   text-align: center;
+    .views-exposed-form{
+        max-width:90%;
+        margin:0 auto;
+         .views-exposed-widget {
+    float: left;
+    padding: 0.5em 0.5em 0px 0px;
+    max-width: 35%;
 }
-.actuGlobale-archives a{
+label{
     font-size: small;
-    color: $violet;
-    margin: em(5px);
-    font-family:$AristaFont;
-    &:hover{}
 }
-
+    }
 }
 #colonne-3.page-archive{}
