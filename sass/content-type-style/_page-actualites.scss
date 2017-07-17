@@ -145,7 +145,13 @@ h1.titre_page_actualites{
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
-#colonne-1.page-actualites{}
+#colonne-1.page-actualites{
+    #block-views-Entreprise-block_1{
+        h3{
+            font-size: large !important;
+        }
+    }
+}
 #colonne-2.page-actualites{
     /*Titre sur image*/
     .titre_actuGlobale{
@@ -208,7 +214,7 @@ block-views-Actu_liste-block_6=annonces;
     }
 }
 
-#table_ag_projets{
+#table_ag_projets,#table-entr-ji{
     tr{
        
     }
