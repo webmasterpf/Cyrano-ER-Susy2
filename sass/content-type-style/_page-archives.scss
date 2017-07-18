@@ -12,6 +12,10 @@
 //@include breakpoint ($tablet){}
 //@include breakpoint(($desktop,$tablet)){}
 
+/*
+Concerne aussi le style du template node-page_vdl_liste.tpl
+*/
+
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
     #colonne-1.CLASS_NAME{order:1;}
@@ -36,10 +40,12 @@ h1.titre_page_archives{
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
 #colonne-1.page-archive,
-#colonne-2.page-archive,
+#colonne-2.page-archive,#colonne-2.vdl_liste,
 #colonne-3.page-archive
 {
-   .table_archives_actus{
+   .table_archives_actus,
+   .table_liste_vdl
+   {
     padding: em(5px);
      tbody{}
  tr{
@@ -87,7 +93,10 @@ span{
     float: left;
     padding: 0.5em 0.5em 0px 0px;
 }
+
+
 }
+
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
@@ -108,4 +117,11 @@ label{
 }
     }
 }
+
+#colonne-2.vdl_liste{
+     .views-submit-button{
+    float: right !important;
+}
+}
+
 #colonne-3.page-archive{}
