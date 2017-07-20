@@ -54,7 +54,7 @@ span{
     padding: em(5px);
 }
 strong,b{
-    color: $rose-fushia;
+    color: $rouge;
 }
     a{
         color: $violet;
@@ -72,14 +72,10 @@ strong,b{
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 #colonne-1.contenu-vdl{
-#illus-actu img{
-    margin: 20px;
-    float: right;
-    border: 2px solid $bleu-turquoise;
-}
+
 
  p{
-    padding: 10px;
+    padding: em(10px);
 }
  a{
     color: $rouge;
@@ -97,7 +93,7 @@ ______________________________*/
     color: $bleu-turquoise;
     padding: 2px 5px;
 }
- strong{color: $prune;}
+ strong{}
 /*Tableau - ajout 06/2015*/
  table{
     width: 98%;border: 0;

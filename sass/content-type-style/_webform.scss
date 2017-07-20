@@ -49,10 +49,12 @@ body .conteneur {
 }
 
 h1.titre-webform{
-    font-size: em(24px);
-    color: $violet;
+    font-size: x-large;
+    color: $rouge;
     line-height: 1.0em;
 }
+
+/*¤¤¤ STYLES PROPRES ¤¤¤*/
 
 #colonne-2.webform{
     h2{
@@ -110,6 +112,15 @@ h1.titre-webform{
     @include PIE;
     }        
 }
+#colonne-3.webform{
+    #bloc_rostand_actus{
+        @include breakpoint (($desktop,$tablet)){
+            width: 91%;
+        }
+        
+    }
+}
+
 /*---- STYLE ELEMENTS FORMULAIRE ----*/
 form.webform-client-form{
         width: 95%;margin: 0 auto;  display: block;

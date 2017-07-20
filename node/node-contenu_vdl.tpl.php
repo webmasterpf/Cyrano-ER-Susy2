@@ -43,13 +43,18 @@
               ?>
         </div>
         <!--______________COLONNE 2________________ -->
-         <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
+         
         <div id="colonne-2" class="col2_layout_8_4 contenu-vdl">
 
          
                      <?php
+                      if ($node->field_lien_rp[0]['view']
+                          OR 
+                          $node->field_fichier_joint_actu[0]['view']
+                          ):
            global $theme_path;
               include ($theme_path.'/includes/dedicates_inc/inc_contenuVDL_docs.php');
+          endif;
               ?>
 <br/>
       
