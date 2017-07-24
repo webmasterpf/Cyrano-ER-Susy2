@@ -40,11 +40,11 @@ if ($view->result) {
 //Affiche la vue
 print $output;
 
-if ($view->result) {
-  // Récupération du titre du display
-  $outputhead = '<p class="">'.$view->display_handler->get_option('header').'</p>';
-}
-print $outputhead;
+//if ($view->result) {
+//  // Récupération du titre du display
+//  $outputhead = '<p class="">'.$view->display_handler->get_option('header').'</p>';
+//}
+//print $outputhead;
 ?>
           
 

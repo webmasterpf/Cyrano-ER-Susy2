@@ -9,6 +9,7 @@
 //@include breakpoint ($mobile){}
 //@include breakpoint ($desktop){}
 //@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
@@ -118,6 +119,16 @@ h1.titre_page_actualites{
         }
 
     }
+    #block-views-Actu_liste-block_4,#block-views-Entreprise-block_2{
+             .view-footer{
+                    background-size: contain;
+                      @include breakpoint(($desktop,$tablet)){
+              background-size: cover;
+        }
+        }
+        
+    }
+    
     #block-views-Actu_liste-block_5,#block-views-Entreprise-block_1{
         background:  url(../images/bg_bloc_violet_ht.jpg) no-repeat left top ;
         background-size: cover;
@@ -130,12 +141,15 @@ h1.titre_page_actualites{
     //Visuels petits blocs
     #block-views-Actu_liste-block_6, #block-views-Entreprise-block_3{
         background:  url(../images/bg_bloc_violet_petit_ht.jpg) no-repeat left top ;
-        background-size: contain;
+        background-size: cover;
     }
 
     .view-footer{
         background: url(../images/bg_bloc_violet_petit_bas.jpg) no-repeat left bottom ;
-        background-size: contain;
+        background-size: cover;
+        @include breakpoint(($desktop,$tablet)){
+            background-size: contain;
+        }
     }
 
 }
@@ -158,7 +172,7 @@ ______________________________*/
         bottom: em(30px);
         left: em(3px);
         position: relative;
-        width: 45%;
+        width: 50%;
         z-index: 20;
         background: white;
         display: block;
@@ -206,7 +220,7 @@ block-views-Actu_liste-block_6=annonces;
          width: 95%;
     margin: 0 auto;
     display: block;
-    max-height: em(95px);
+    max-height: em(105px);
     }
        td{
         text-align: center;

@@ -58,7 +58,7 @@ h1.titre_page_lycee,h1.title-classes{
         padding: em(5px);
     }
     strong,b{
-        color: $rose-fushia;
+        color: $violet;
     }
     a{
         color: $violet;
@@ -194,7 +194,7 @@ ______________________________*/
             }
         }
         //style particulier pour le 1er § qui ne contient pas la iframe 
-        p,p:first-child {
+        > div,p,p:first-child {
             margin: 0 em(15px);
             padding: 0;
         }
@@ -269,7 +269,7 @@ ______________________________*/
         padding: em(5px);
     }
     h3{
-        color: $rouge;
+        color: $bleu-turquoise;
         padding: em(5px);
     }
     h4{
@@ -540,7 +540,7 @@ h1.titre_classes{
             
         }
         @include breakpoint ($desktop){
-           @include span(8 of 8);//car inclus dans une zone de 8 colonnes
+           @include span(7 of 8);//car inclus dans une zone de 8 colonnes
            @include isolate(-1.3em);
             @include gutters(.3em);/*Toujours en dernier pour override de la taille des gouttieres*/
         }
