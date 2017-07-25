@@ -94,13 +94,17 @@ aside.DiapoPanoHP {
 }
 /* Texte Accueil */
 .HPBasGauche{
-    .txt-accueil{padding: 0 em(5px);
-                 strong{color: $violet;}
-                 a{text-decoration: none;color: $rouge;padding: em(1px);
-                   &:hover{background: $rouge;color: $gris-clair;}
-                 }
+    .txt-accueil{
+        padding: 0 em(5px);
+        p{
+            font-size: small;
+        }
+        strong{color: $violet;}
+        a{text-decoration: none;color: $rouge;padding: em(1px);
+          &:hover{background: $rouge;color: $gris-clair;}
+        }
     }
-    
+
 }
 
 /*Liste pour homepage*/
